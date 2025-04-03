@@ -1,3 +1,4 @@
+
 plugins {
 	id 'io.spring.dependency-management' version '1.0.9.RELEASE' apply false
 	id 'io.spring.ge.conventions' version '0.0.7'
@@ -23,7 +24,15 @@ ext {
 
 configure(allprojects) { project ->
 	apply plugin: "io.spring.dependency-management"
-
+	repositories {
+		maven { url 'https://maven.aliyun.com/repository/public' }
+		maven { url 'https://maven.aliyun.com/repository/google' }
+		maven { url 'https://maven.aliyun.com/repository/gradle-plugin' }
+		maven { url 'https://maven.aliyun.com/repository/spring' } // Spring 相关依赖
+		maven { url 'https://maven.aliyun.com/repository/apache-snapshots' } // Apache Snapshots
+		maven { url 'https://maven.aliyun.com/repository/jcenter' } // 旧 JCenter 镜像（可选）
+		mavenCentral()  // 仍然保留官方 Maven Central
+	}
 	dependencyManagement {
 		imports {
 			mavenBom "com.fasterxml.jackson:jackson-bom:2.10.5"
@@ -241,7 +250,7 @@ configure(allprojects) { project ->
 			dependency "javax.cache:cache-api:1.1.0"
 			dependency "javax.ejb:javax.ejb-api:3.2"
 			dependency "javax.el:javax.el-api:3.0.1-b04"
-			dependency "javax.enterprise.concurrent:javax.enterprise.concurrent-api:1.0"
+			//dependency "javax.enterprise.concurrent:javax.enterprise.concurrent-api:1.0"
 			dependency "javax.faces:javax.faces-api:2.2"
 			dependency "javax.inject:javax.inject:1"
 			dependency "javax.inject:javax.inject-tck:1"

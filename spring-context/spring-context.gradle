@@ -11,7 +11,7 @@ dependencies {
 	optional(project(":spring-instrument"))
 	optional("javax.annotation:javax.annotation-api")
 	optional("javax.ejb:javax.ejb-api")
-	optional("javax.enterprise.concurrent:javax.enterprise.concurrent-api")
+	optional("javax.enterprise.concurrent:javax.enterprise.concurrent-api:1.1")
 	optional("javax.inject:javax.inject")
 	optional("javax.interceptor:javax.interceptor-api")
 	optional("javax.money:money-api")

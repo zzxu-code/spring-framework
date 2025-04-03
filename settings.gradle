@@ -1,9 +1,3 @@
-pluginManagement {
-	repositories {
-		gradlePluginPortal()
-		maven { url 'https://repo.spring.io/plugins-release' }
-	}
-}
 apply from: "$rootDir/gradle/build-cache-settings.gradle"
 
 include "spring-aop"
